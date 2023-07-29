@@ -1,1 +1,33 @@
-/*# sourceMappingURL=index.module.css.map */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: #202020;
+}
+
+.title, .nav-link, .btn {
+  font-family: "Oswald", sans-serif;
+}
+
+.nav-link, .btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #202020;
+}
+
+.sign-in-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+}/*# sourceMappingURL=index.module.css.map */

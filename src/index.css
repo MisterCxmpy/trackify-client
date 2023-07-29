@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Inter:wght@200;600;800&family=Jost:wght@400;700&family=Oswald:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  height: auto;
+  display: flex;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -21,24 +30,12 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   cursor: pointer;
-  border: none;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
 }
 
 input, textarea, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0.5rem;
-}
-
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-a.button {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 img,
