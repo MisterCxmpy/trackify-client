@@ -12,7 +12,6 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
-  transition: scale 0.1s;
 }
 
 .hero-heading {
@@ -48,7 +47,6 @@
   justify-content: center;
   gap: 20px;
   margin-top: 10px;
-  overflow: hidden;
 }
 
 .button {
@@ -64,5 +62,17 @@
   &:active {
     scale: 0.95;
     margin-top: 3px;
+  }
+}
+
+.showcase {
+  width: 100%;
+  height: auto;
+
+  > .image {
+    width: 80%;
+    height: 500px;
+    background: #202020;
+    margin: 0 auto;
   }
 }

@@ -6,7 +6,7 @@ export default function Landing() {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   const handleMouseMove = (e) => {
-    setCursorPosition({ left: e.pageX, top: e.pageY });
+    setCursorPosition({ left: e.clientX, top: e.clientY });
   };
 
   useEffect(() => {
@@ -24,13 +24,16 @@ export default function Landing() {
   return (
     <div className={styles['landing']}>
       <Hero handleButtonHover={handleButtonHover}/>
+      <Showcase />
       <div
         className={styles['cursor']}
-        style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', display: isButtonHovered ? 'block' : 'none' }}
+        style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
       ></div>
     </div>
   );
 }
+
+//#region Hero Section
 
 function Hero({ handleButtonHover }) {
   return (
@@ -57,3 +60,17 @@ function HoverButton({handleButtonHover, content}) {
     >{content}</button>
   )
 }
+
+//#endregion
+
+//#region Showcase Section
+
+function Showcase() {
+  return (
+    <div className={styles['showcase']}>
+      <div className={styles['image']}></div>
+    </div>
+  )
+}
+
+//#endregion
