@@ -6,13 +6,6 @@
   box-sizing: border-box;
 }
 
-.container {
-  max-width: 1440px;
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
