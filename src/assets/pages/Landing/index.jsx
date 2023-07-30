@@ -25,6 +25,7 @@ export default function Landing() {
     <div className={styles['landing']}>
       <Hero handleButtonHover={handleButtonHover}/>
       <Showcase />
+      <About />
       <div
         className={styles['cursor']}
         style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
@@ -69,6 +70,30 @@ function Showcase() {
   return (
     <div className={styles['showcase']}>
       <div className={styles['image']}></div>
+    </div>
+  )
+}
+
+//#endregion
+
+//#region About Section
+
+function About() {
+  return (
+    <div className={styles['about']}>
+      <AboutInfo isReverse={false}/>
+      <AboutInfo isReverse={true}/>
+      <AboutInfo isReverse={false}/>
+    </div>
+  )
+}
+
+function AboutInfo({ isReverse }) {
+
+  return (
+    <div className={`${styles['about-info']} ${isReverse ? styles["reverse"] : null}`}>
+      <div className={styles['image']}></div>
+      <span className={styles['content']}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, culpa voluptas eaque vitae modi temporibus quod dolore facere neque repudiandae ab nisi eveniet tempora cumque voluptatum, sunt aperiam ratione! Tempore.</span>
     </div>
   )
 }
