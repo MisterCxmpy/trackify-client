@@ -74,12 +74,12 @@ function Features() {
     <div className={styles['features']} id='features'>
       <div className={styles['coding-block']}>
         <div className={styles['header']}>
-          <span className={styles['header-title']}>src/components/Feautres</span>
+          <span className={styles['header-title']}>src/components/Features</span>
         </div>
         <div className={styles['wrapper']}>
-          <p id="typed-paragraph">
-            <span id="target">{result}</span>
-            <span id="typed-cursor">|</span>
+          <p className={styles['typed-paragraph']}>
+            <span className={styles['target']}>{result}</span>
+            <span className={styles['typed-cursor']}>|</span>
           </p>
         </div>
       </div>
@@ -111,9 +111,9 @@ function Features() {
           <span className={styles['header-title']}>src/components/Features</span>
         </div>
         <div className={styles['wrapper']}>
-          <p id="typed-paragraph">
-            <span id="target">{result}</span>
-            <span id="typed-cursor">|</span>
+          <p className={styles['typed-paragraph']}>
+            <span className={styles['target']}>{result}</span>
+            <span className={styles['typed-cursor']}>|</span>
           </p>
         </div>
       </div>
