@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
+import { MdOutlineAnalytics } from 'react-icons/md';
+import { AiOutlineIssuesClose, AiFillBug, AiOutlineTeam } from 'react-icons/ai';
+import { Link } from 'react-scroll';
 
 export default function Landing() {
   const [cursorPosition, setCursorPosition] = useState({ left: 0, top: 0 });
@@ -47,7 +50,7 @@ function Hero({ handleButtonHover }) {
       </h3>
       <div className={styles['buttons']}>
         <HoverButton handleButtonHover={handleButtonHover} content={"sign up"} />
-        <HoverButton handleButtonHover={handleButtonHover} content={"learn more"} />
+        <HoverLinkButton handleButtonHover={handleButtonHover} content={"learn more"} />
       </div>
     </div>
   );
@@ -55,11 +58,20 @@ function Hero({ handleButtonHover }) {
 
 function HoverButton({handleButtonHover, content}) {
   return (
-    <button
-      className={styles['button']}
+    <button className={styles['button']}
       onMouseEnter={() => handleButtonHover(true)}
-      onMouseLeave={() => handleButtonHover(false)}
-    >{content}</button>
+      onMouseLeave={() => handleButtonHover(false)}>{content}
+    </button>
+  )
+}
+
+function HoverLinkButton({handleButtonHover, content}) {
+  return (
+    <Link to={"about"} spy={true} smooth={true} offset={-150} duration={800}>
+      <button className={styles['button']}
+      onMouseEnter={() => handleButtonHover(true)}
+      onMouseLeave={() => handleButtonHover(false)}>{content}</button>
+    </Link>
   )
 }
 
@@ -69,43 +81,69 @@ function HoverButton({handleButtonHover, content}) {
 
 function Features() {
   const srcText = `
-function Features() {
-  return (
-    <div className={styles['features']} id='features'>
-      <div className={styles['coding-block']}>
-        <div className={styles['header']}>
-          <span className={styles['header-title']}>src/components/Features</span>
-        </div>
-        <div className={styles['wrapper']}>
-          <p className={styles['typed-paragraph']}>
-            <span className={styles['target']}>{result}</span>
-            <span className={styles['typed-cursor']}>|</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  )
-}`;
+1  function Features() {
+2    return (
+3      <div className={styles['features']} id='features'>
+4        <div className={styles['coding-block']}>
+5          <div className={styles['header']}>
+6            <span className={styles['header-title']}>src/components/Features</span>
+7          </div>
+8          <div className={styles['wrapper']}>
+9            <p className={styles['typed-paragraph']}>
+10             <span className={styles['target']}>{result}</span>
+11             <span className={styles['typed-cursor']}>|</span>
+12           </p>
+13         </div>
+14       </div>
+15     </div>
+16   )
+17 }`;
+
+  const [inView, setInView] = useState(false);
   const [result, setResult] = useState('');
   const iRef = useRef(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (iRef.current === srcText.length - 1) {
+    if (inView) {
+      const interval = setInterval(() => {
+        if (iRef.current === srcText.length - 1) {
+          clearInterval(interval);
+          return;
+        }
+        iRef.current++;
+        setResult((prevResult) => prevResult + srcText[iRef.current]);
+      }, 50);
+  
+      return () => {
         clearInterval(interval);
-        return;
-      }
-      iRef.current++;
-      setResult((prevResult) => prevResult + srcText[iRef.current]);
-    }, 50);
+      };
+    }
+  }, [inView]);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  const featuredRef = useRef();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          entry.target.classList.remove(styles['hidden']);
+          entry.target.classList.add(styles['show']);
+        }
+      });
+    },
+    {
+      rootMargin: '0px 0px -50% 0px',
+    }
+  );
+
+  useEffect(() => {
+    observer.observe(featuredRef.current);
+    return () => observer.disconnect();
+  }, [observer]);
 
   return (
-    <div className={styles['features']} id='features'>
+    <div className={`${styles['features']} ${styles['hidden']}`} id='features' ref={featuredRef}>
       <div className={styles['coding-block']}>
         <div className={styles['header']}>
           <span className={styles['header-title']}>src/components/Features</span>
@@ -117,6 +155,18 @@ function Features() {
           </p>
         </div>
       </div>
+      <FeatureTooltip content={"Issue Creation"} />
+      <FeatureTooltip content={"Issue Tracking"} />
+      <FeatureTooltip content={"Team Collaboration"} />
+      <FeatureTooltip content={"Reporting and Analytics"} />
+    </div>
+  )
+}
+
+function FeatureTooltip({content}) {
+  return (
+    <div className={styles['feature-tooltip']}>
+      <h3>{content}</h3>
     </div>
   )
 }
@@ -140,19 +190,20 @@ function Showcase() {
 function About() {
   return (
     <div className={styles['about']} id='about'>
-      <AboutInfo isReverse={false}/>
-      <AboutInfo isReverse={true}/>
-      <AboutInfo isReverse={false}/>
+      <AboutInfo content={"Trackify allows users to effortlessly create detailed bug reports, capturing critical information like the bug's description, severity, and steps to reproduce, ensuring clear and comprehensive communication."} image={<AiOutlineIssuesClose />} isReverse={false}/>
+      <AboutInfo content={"With Trackify's robust tracking capabilities, teams can monitor the progress of each bug, from creation to resolution, ensuring nothing slips through the cracks, promoting efficient bug management."} image={<AiFillBug />} isReverse={true}/>
+      <AboutInfo content={"Trackify facilitates seamless collaboration among team members by providing tools for assigning bugs, commenting, and sharing updates, fostering effective teamwork in resolving issues promptly."} image={<AiOutlineTeam />} isReverse={false}/>
+      <AboutInfo content={"Trackify empowers users with insightful bug reporting and analytics, offering key metrics on bug trends, resolution times, and project health, aiding data-driven decision-making for continuous improvement."} image={<MdOutlineAnalytics />} isReverse={true}/>
     </div>
   )
 }
 
-function AboutInfo({ isReverse }) {
+function AboutInfo({ content, image, isReverse }) {
 
   return (
     <div className={`${styles['about-info']} ${isReverse ? styles["reverse"] : null}`}>
-      <div className={styles['image']}></div>
-      <span className={styles['content']}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, culpa voluptas eaque vitae modi temporibus quod dolore facere neque repudiandae ab nisi eveniet tempora cumque voluptatum, sunt aperiam ratione! Tempore.</span>
+      <div className={styles['image']}>{image}</div>
+      <span className={styles['content']}>{content}</span>
     </div>
   )
 }
