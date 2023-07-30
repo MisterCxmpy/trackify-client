@@ -4,6 +4,20 @@ import { Link } from 'react-scroll'
 import styles from "./index.module.css"
 
 export default function Navbar() {
+
+  const setDarkMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "dark")
+  }
+
+  const setLightMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "light")
+  }
+
+  const toggleTheme = (e) => {
+    if (e.target.checked) setDarkMode()
+    else setLightMode()
+  }
+
   return (
     <>
       <div className={styles['navbar']}>
@@ -14,7 +28,13 @@ export default function Navbar() {
           <NewLink classes={["nav-link"]} to={"about"} content={"About"} />
           <NewLink classes={["nav-link"]} to={"/"} content={"Contact"} />
         </div>
-        <NewLink classes={["sign-in-btn", "btn"]} to={"/"} content={"sign in"} />
+        <div className={styles['other']}>
+          <input
+                type='checkbox'
+                onChange={toggleTheme}
+            />
+          <NewLink classes={["sign-in-btn", "btn"]} to={"/"} content={"sign in"} />
+        </div>
       </div>
       <Outlet />
     </>

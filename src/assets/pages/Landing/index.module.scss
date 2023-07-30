@@ -8,7 +8,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--primary-text);
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
@@ -26,6 +26,7 @@
 
 .main-heading, .sub-heading, .button, .content, .feature-tooltip {
   font-family: 'Oswald', sans-serif;
+  color: var(--primary-text);
 }
 
 .main-heading {
@@ -55,8 +56,8 @@
   padding: 5px 10px;
   font-size: 18px;
   text-transform: uppercase;
-  background: #fff;
-  border: 1.5px solid #000;
+  background: var(--primary-background);
+  border: 1.5px solid var(--primary-text);
   transition: 0.1s;
   height: max-content;
 
@@ -100,7 +101,7 @@
     width: 70%;
     min-height: 600px;
     height: auto;
-    background: #f7f7f7;
+    background: var(--secondary-background);
     margin: 0 auto;
     border-radius: 15px;
     position: relative;
@@ -110,7 +111,7 @@
     .header {
       width: 100%;
       height: auto;
-      background: #202020;
+      background: var(--accent-color);
       position: absolute;
       top: 0;
       display: flex;
@@ -118,7 +119,7 @@
 
       .header-title {
         font-size: 18px;
-        color: #fff;
+        color: var(--secondary-text);
         padding: 10px 20px;
         font-family: 'Jost', sans-serif;
         font-weight: 400;
@@ -145,7 +146,7 @@
     
     .target,
     .typed-cursor {
-      color: #505050;
+      color: var(--primary-text);
       font-family: monospace;
       line-height: 1.5;
       font-size: 1em;
@@ -162,8 +163,9 @@
     position: absolute;
     width: auto;
     height: auto;
-    background: #fff;
+    background: var(--primary-background);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    color: var(--primary-text);
 
     > h3 {
       padding: 15px 25px;
@@ -236,7 +238,7 @@
   > .image {
     width: 80%;
     height: 700px;
-    background: #202020;
+    background: var(--primary-text);
     margin: 0 auto;
   }
 }
@@ -264,7 +266,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #202020;
+      color: var(--primary-text);
     }
 
     > .content {

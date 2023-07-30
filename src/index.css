@@ -1,9 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue&family=Inter:wght@200;600;800&family=Jost:wght@400;700&family=Oswald:wght@400;500;700&display=swap');
 
+:root {
+
+  --primary-background: #fff;
+  --secondary-background: #f7f7f7;
+  --accent-color: #202020;
+  --primary-text: #202020;
+  --secondary-text: #fff;
+
+}
+
+[data-theme="dark"] {
+  --primary-background: #202020;
+  --secondary-background: #242424;
+  --accent-color: #181818;
+  --primary-text: #fff;
+  --secondary-text: #fff;
+}
+
+[data-theme="light"] {
+  --primary-background: #fff;
+  --secondary-background: #f7f7f7;
+  --accent-color: #202020;
+  --primary-text: #202020;
+  --secondary-text: #fff;
+}
+
+body {
+  background: var(--primary-background);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background 0.1s;
 }
 
 h1, h2, h3, h4, h5, h6 {
