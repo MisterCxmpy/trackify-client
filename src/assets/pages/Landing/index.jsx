@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
 
 export default function Landing() {
@@ -24,6 +24,7 @@ export default function Landing() {
   return (
     <div className={styles['landing']}>
       <Hero handleButtonHover={handleButtonHover}/>
+      <Features />
       <Showcase />
       <About />
       <div
@@ -38,7 +39,7 @@ export default function Landing() {
 
 function Hero({ handleButtonHover }) {
   return (
-    <div className={styles['hero-heading']}>
+    <div className={styles['hero-heading']} id='hero'>
       <h1 className={styles['main-heading']}>Easy way to manage your applications</h1>
       <h3 className={styles['sub-heading']}>
         Effortless Bug Tracking & Team Integration: Boost productivity and collaboration with our streamlined bug
@@ -64,11 +65,69 @@ function HoverButton({handleButtonHover, content}) {
 
 //#endregion
 
+//#region Features
+
+function Features() {
+  const srcText = `
+function Features() {
+  return (
+    <div className={styles['features']} id='features'>
+      <div className={styles['coding-block']}>
+        <div className={styles['header']}>
+          <span className={styles['header-title']}>src/components/Feautres</span>
+        </div>
+        <div className={styles['wrapper']}>
+          <p id="typed-paragraph">
+            <span id="target">{result}</span>
+            <span id="typed-cursor">|</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}`;
+  const [result, setResult] = useState('');
+  const iRef = useRef(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (iRef.current === srcText.length - 1) {
+        clearInterval(interval);
+        return;
+      }
+      iRef.current++;
+      setResult((prevResult) => prevResult + srcText[iRef.current]);
+    }, 50);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className={styles['features']} id='features'>
+      <div className={styles['coding-block']}>
+        <div className={styles['header']}>
+          <span className={styles['header-title']}>src/components/Features</span>
+        </div>
+        <div className={styles['wrapper']}>
+          <p id="typed-paragraph">
+            <span id="target">{result}</span>
+            <span id="typed-cursor">|</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+//#endregion
+
 //#region Showcase Section
 
 function Showcase() {
   return (
-    <div className={styles['showcase']}>
+    <div className={styles['showcase']} id='showcase'>
       <div className={styles['image']}></div>
     </div>
   )
@@ -80,7 +139,7 @@ function Showcase() {
 
 function About() {
   return (
-    <div className={styles['about']}>
+    <div className={styles['about']} id='about'>
       <AboutInfo isReverse={false}/>
       <AboutInfo isReverse={true}/>
       <AboutInfo isReverse={false}/>

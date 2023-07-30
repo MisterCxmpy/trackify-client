@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
+  z-index: 1000;
 }
 
 .title {
@@ -18,6 +19,7 @@
 
 .title, .nav-link, .btn {
   font-family: "Oswald", sans-serif;
+  cursor: pointer;
 }
 
 .nav-link, .btn {
