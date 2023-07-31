@@ -14,11 +14,12 @@
 
 .title, .nav-link, .btn {
   color: var(--primary-text);
-}
-
-.title, .nav-link, .btn {
   font-family: 'Oswald', sans-serif;
   cursor: pointer;
+}
+
+.title {
+  font-size: 36px;
 }
 
 .navlinks {
