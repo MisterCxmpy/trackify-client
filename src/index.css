@@ -2,6 +2,7 @@
 
 :root {
 
+  --opposite-background: #202020;
   --primary-background: #fff;
   --secondary-background: #f7f7f7;
   --accent-color: #202020;
@@ -11,6 +12,7 @@
 }
 
 [data-theme="dark"] {
+  --opposite-background: #fff;
   --primary-background: #202020;
   --secondary-background: #242424;
   --accent-color: #181818;
@@ -19,6 +21,7 @@
 }
 
 [data-theme="light"] {
+  --opposite-background: #202020;
   --primary-background: #fff;
   --secondary-background: #f7f7f7;
   --accent-color: #202020;

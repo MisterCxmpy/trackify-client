@@ -1,0 +1,11 @@
+.theme-toggle {
+  background: none;
+  font-size: 18px;
+  border: none;
+  color: var(--primary-text);
+  padding: 10px 5px;
+}
+.theme-toggle > span {
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=index.module.css.map */

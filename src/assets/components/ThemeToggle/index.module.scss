@@ -1,0 +1,12 @@
+.theme-toggle {
+  background: none;
+  font-size: 18px;
+  border: none;
+  color: var(--primary-text);
+  padding: 10px 5px;
+
+  > span {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styles from './index.module.css';
 import { Outlet } from 'react-router-dom';
 import { GrOverview, GrProjects } from 'react-icons/gr';
-import { AiOutlineTeam } from 'react-icons/ai';
+import { AiOutlineTeam, AiOutlineUser } from 'react-icons/ai';
+import { ThemeToggle } from '../../components';
 
 export default function SideNavbar() {
   const [navButtons, setNavButtons] = useState([
@@ -33,6 +34,11 @@ export default function SideNavbar() {
               onClick={() => handleNavButtonClick(index)}
             />
           ))}
+          <div className={`${styles['nav-btn']} ${styles['username']}`}>
+            {<AiOutlineUser />}
+            <span className={styles['btn']}>Username</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
       <Outlet />
