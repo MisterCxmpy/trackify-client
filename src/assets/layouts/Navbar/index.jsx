@@ -1,22 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Link } from 'react-scroll'
 import styles from "./index.module.css"
+import { BsMoonFill, BsSunFill } from "react-icons/bs"
 
 export default function Navbar() {
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const setDarkMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "dark")
-  }
+    document.querySelector('body').setAttribute('data-theme', 'dark');
+    setIsDarkMode(true);
+  };
 
   const setLightMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "light")
-  }
+    document.querySelector('body').setAttribute('data-theme', 'light');
+    setIsDarkMode(false);
+  };
 
-  const toggleTheme = (e) => {
-    if (e.target.checked) setDarkMode()
-    else setLightMode()
-  }
+  const toggleTheme = () => {
+    const body = document.querySelector('body');
+    const currentTheme = body.getAttribute('data-theme');
+
+    if (currentTheme === 'dark') {
+      setLightMode();
+    } else {
+      setDarkMode();
+    }
+  };
 
   return (
     <>
@@ -29,10 +40,7 @@ export default function Navbar() {
           <NewLink classes={["nav-link"]} to={"/"} content={"Contact"} />
         </div>
         <div className={styles['other']}>
-          <input
-                type='checkbox'
-                onChange={toggleTheme}
-            />
+          <button className={styles['theme-toggle']} onClick={toggleTheme}>{isDarkMode ? <BsSunFill /> : <BsMoonFill />}</button>
           <NewLink classes={["sign-in-btn", "btn"]} to={"/"} content={"sign in"} />
         </div>
       </div>

@@ -5,10 +5,10 @@
 
 .cursor {
   position: fixed;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: var(--primary-text);
+  background: var(--secondary-text);
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
@@ -33,6 +33,7 @@
   font-size: 3.8rem;
   width: 40%;
   text-align: center;
+  line-height: 110%;
 }
 
 .sub-heading {
@@ -165,26 +166,26 @@
   }
 }
 .features .feature-tooltip:nth-of-type(2) {
-  --top-value: 15%;
-  animation: moveUp 1s;
+  --top-value: 25%;
+  animation: moveUp 1.5s;
   top: var(--top-value);
   left: 10%;
 }
 .features .feature-tooltip:nth-of-type(3) {
-  --top-value: 15%;
-  animation: moveUp 1s;
+  --top-value: 25%;
+  animation: moveUp 1.5s;
   top: var(--top-value);
   right: 10%;
 }
 .features .feature-tooltip:nth-of-type(4) {
-  --top-value: 40%;
-  animation: moveUp 1s;
+  --top-value: 50%;
+  animation: moveUp 1.5s;
   top: var(--top-value);
   left: 10%;
 }
 .features .feature-tooltip:nth-of-type(5) {
-  --top-value: 40%;
-  animation: moveUp 1s;
+  --top-value: 50%;
+  animation: moveUp 1.5s;
   top: var(--top-value);
   right: 10%;
 }

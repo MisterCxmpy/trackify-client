@@ -5,10 +5,10 @@
 
 .cursor {
   position: fixed;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: var(--primary-text);
+  background: var(--secondary-text);
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
@@ -33,6 +33,7 @@
   font-size: 3.8rem;
   width: 40%;
   text-align: center;
+  line-height: 110%;
 }
 
 .sub-heading {
@@ -187,33 +188,14 @@
   }
   
 
-  .feature-tooltip:nth-of-type(2) {
-    @extend %move-up-animation;
-    --top-value: 15%;
-    animation: moveUp 1s;
-    top: var(--top-value);
-    left: 10%;
-  }
-  .feature-tooltip:nth-of-type(3) {
-    @extend %move-up-animation;
-    --top-value: 15%;
-    animation: moveUp 1s;
-    top: var(--top-value);
-    right: 10%;
-  }
-  .feature-tooltip:nth-of-type(4) {
-    @extend %move-up-animation;
-    --top-value: 40%;
-    animation: moveUp 1s;
-    top: var(--top-value);
-    left: 10%;
-  }
-  .feature-tooltip:nth-of-type(5) {
-    @extend %move-up-animation;
-    --top-value: 40%;
-    animation: moveUp 1s;
-    top: var(--top-value);
-    right: 10%;
+  @for $i from 2 through 5 {
+    .feature-tooltip:nth-of-type(#{$i}) {
+      @extend %move-up-animation;
+      --top-value: #{if($i > 3, 50%, 25%)};
+      animation: moveUp 1.5s;
+      top: var(--top-value);
+      #{if($i % 2 == 0, "left", "right")}: 10%;
+    }
   }
 }
 
