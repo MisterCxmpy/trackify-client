@@ -261,7 +261,6 @@
   width: 100%;
   position: relative;
 }
-
 .input-section > span {
   position: absolute;
   left: 32px;
@@ -273,8 +272,9 @@
   pointer-events: none;
   transition: 0.3s;
 }
-
-.input-section > input, .input-section > textarea, .input-section > button {
+.input-section > input,
+.input-section > textarea,
+.input-section > button {
   width: 100%;
   box-sizing: border-box;
   border: none;
@@ -285,36 +285,19 @@
   background: var(--secondary-background);
   border: 1.75px solid var(--primary-text);
 }
-
-.input-section > button {
-  background: var(--secondary-background);
-  color: var(--primary-text);
-  cursor: pointer;
-}
-
-.input-section > textarea {
+.input-section textarea {
   resize: none;
   height: 300px;
 }
-
-.input-section > textarea ~ span {
+.input-section textarea ~ span {
   top: 25px;
 }
-
 .input-section > input:focus ~ span,
-.input-section > input:valid ~ span {
-  top: -20px;
-  left: -5px;
-  font-size: 14px;
-}
-
+.input-section > input:valid ~ span,
 .input-section > textarea:focus ~ span,
 .input-section > textarea:valid ~ span {
   top: -20px;
   left: -5px;
   font-size: 14px;
-}
-
-.input-section > input:focus, .input-section > textarea:focus {
   outline: none !important;
 }/*# sourceMappingURL=index.module.css.map */

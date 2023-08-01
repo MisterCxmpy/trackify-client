@@ -282,61 +282,49 @@
 .input-section {
   width: 100%;
   position: relative;
-}
 
-.input-section > span {
-  position: absolute;
-  left: 32px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 200;
-  color: var(--primary-text);
-  font-size: 16px;
-  pointer-events: none;
-  transition: 0.3s;
-}
+  > span {
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 200;
+    color: var(--primary-text);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.3s;
+  }
 
-.input-section > input, .input-section > textarea, .input-section > button {
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  padding: 16px 30px;
-  font-weight: 200;
-  color: var(--primary-text);
-  font-size: 16px;
-  background: var(--secondary-background);
-  border: 1.75px solid var(--primary-text);
-}
+  > input,
+  > textarea,
+  > button {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    padding: 16px 30px;
+    font-weight: 200;
+    color: var(--primary-text);
+    font-size: 16px;
+    background: var(--secondary-background);
+    border: 1.75px solid var(--primary-text);
+  }
 
-.input-section > button {
-  background: var(--secondary-background);
-  color: var(--primary-text);
-  cursor: pointer;
-}
+  textarea {
+    resize: none;
+    height: 300px;
 
-.input-section > textarea {
-  resize: none;
-  height: 300px;
-}
+    ~ span {
+      top: 25px;
+    }
+  }
 
-.input-section > textarea ~ span {
-  top: 25px;
-}
-
-.input-section > input:focus ~ span,
-.input-section > input:valid ~ span {
-  top: -20px;
-  left: -5px;
-  font-size: 14px;
-}
-
-.input-section > textarea:focus ~ span,
-.input-section > textarea:valid ~ span {
-  top: -20px;
-  left: -5px;
-  font-size: 14px;
-}
-
-.input-section > input:focus, .input-section > textarea:focus {
-  outline: none !important;
+  > input:focus ~ span,
+  > input:valid ~ span, 
+  > textarea:focus ~ span,
+  > textarea:valid ~ span {
+    top: -20px;
+    left: -5px;
+    font-size: 14px;
+    outline: none !important;
+  }
 }
