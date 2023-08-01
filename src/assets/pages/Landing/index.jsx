@@ -30,6 +30,7 @@ export default function Landing() {
       <Features />
       <Showcase />
       <About />
+      <Contact />
       <div
         className={styles['cursor']}
         style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
@@ -204,6 +205,40 @@ function AboutInfo({ content, image, isReverse }) {
     <div className={`${styles['about-info']} ${isReverse ? styles["reverse"] : null}`}>
       <div className={styles['image']}>{image}</div>
       <span className={styles['content']}>{content}</span>
+    </div>
+  )
+}
+
+//#endregion
+
+//#region Contact Section
+
+function Contact() {
+  return (
+    <div className={styles['contact']} id='contact'>
+      <div className={styles['contact-form']}>
+          <form>
+            <div className={styles['input-section']}>
+              <input type="text" required/>
+              <span>Your name</span>
+            </div>
+            <div className={styles['input-section']}>
+              <input type="text" required />
+              <span>Your Email</span>
+            </div>
+            <div className={styles['input-section']}>
+              <input type="text" required />
+              <span>Subject</span>
+            </div>
+            <div className={styles['input-section']}>
+              <textarea type="text" required />
+              <span>Message</span>
+            </div>
+            <div className={styles['input-section']}>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
     </div>
   )
 }

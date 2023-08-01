@@ -24,7 +24,7 @@
   gap: 20px;
 }
 
-.main-heading, .sub-heading, .button, .content, .feature-tooltip {
+.main-heading, .sub-heading, .button, .content, .feature-tooltip, .input-section {
   font-family: "Oswald", sans-serif;
   color: var(--primary-text);
 }
@@ -68,7 +68,7 @@
   margin-top: 3px;
 }
 
-.features, .showcase, .about {
+.features, .showcase, .about, .contact {
   width: 100%;
   height: auto;
   margin-bottom: 200px;
@@ -98,7 +98,7 @@
   border-radius: 15px;
   position: relative;
   overflow: hidden;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: var(--box-shadow);
 }
 .features .coding-block .header {
   width: 100%;
@@ -232,4 +232,89 @@
 }
 .about .about-info > .content {
   font-size: 1.5rem;
+}
+
+.contact-form {
+  max-width: 700px;
+  width: 700px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.contact-form > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+  gap: 40px;
+  box-shadow: var(--box-shadow);
+  border-radius: 15px;
+}
+
+.input-section {
+  width: 100%;
+  position: relative;
+}
+
+.input-section > span {
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 200;
+  color: var(--primary-text);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input-section > input, .input-section > textarea, .input-section > button {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding: 16px 30px;
+  font-weight: 200;
+  color: var(--primary-text);
+  font-size: 16px;
+  background: var(--secondary-background);
+  border: 1.75px solid var(--primary-text);
+}
+
+.input-section > button {
+  background: var(--secondary-background);
+  color: var(--primary-text);
+  cursor: pointer;
+}
+
+.input-section > textarea {
+  resize: none;
+  height: 300px;
+}
+
+.input-section > textarea ~ span {
+  top: 25px;
+}
+
+.input-section > input:focus ~ span,
+.input-section > input:valid ~ span {
+  top: -20px;
+  left: -5px;
+  font-size: 14px;
+}
+
+.input-section > textarea:focus ~ span,
+.input-section > textarea:valid ~ span {
+  top: -20px;
+  left: -5px;
+  font-size: 14px;
+}
+
+.input-section > input:focus, .input-section > textarea:focus {
+  outline: none !important;
 }/*# sourceMappingURL=index.module.css.map */

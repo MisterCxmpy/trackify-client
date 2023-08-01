@@ -14,7 +14,7 @@ export default function Navbar() {
           <NewLink classes={["nav-link"]} to={"features"} content={"Features"} />
           <NewLink classes={["nav-link"]} to={"showcase"} content={"Showcase"} />
           <NewLink classes={["nav-link"]} to={"about"} content={"About"} />
-          <NewLink classes={["nav-link"]} to={"/"} content={"Contact"} />
+          <NewLink classes={["nav-link"]} to={"contact"} content={"Contact"} />
         </div>
         <div className={styles['other']}>
           <ThemeToggle />

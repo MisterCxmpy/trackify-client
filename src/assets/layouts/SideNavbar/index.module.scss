@@ -43,6 +43,10 @@
   > svg {
     color: var(--primary-text);
     fill: var(--primary-text);
+    
+    > path {
+      stroke: var(--primary-text);
+    }
   }
 
   &.active > .current {

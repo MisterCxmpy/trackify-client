@@ -44,6 +44,9 @@
   color: var(--primary-text);
   fill: var(--primary-text);
 }
+.nav-btn > svg > path {
+  stroke: var(--primary-text);
+}
 .nav-btn.active > .current {
   position: absolute;
   left: 0;
