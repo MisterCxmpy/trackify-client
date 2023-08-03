@@ -1,9 +1,12 @@
 .dashboard {
   width: 100%;
   height: auto;
-  margin-left: 250px;
   padding: 20px;
   float: left;
+  max-width: 1520px;
+  margin: 0 auto;
+  position: relative;
+  margin-left: max(295px, (100% - 1520px) / 2);
 }
 
 .title {
@@ -19,7 +22,7 @@
 }
 
 .completed-items {
-  height: 125px;
+  height: 100px;
 }
 
 .overview-content {
@@ -28,6 +31,10 @@
   grid-template-rows: repeat(auto-fit, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+
+.acitve-bugs, .team-members, .remaining-bugs, .activity, .progress, .recently-completed {
+  border-radius: 15px;
 }
 
 .acitve-bugs {
@@ -61,5 +68,5 @@
 }
 
 .activity, .progress {
-  height: 500px;
+  height: 550px;
 }/*# sourceMappingURL=index.module.css.map */
