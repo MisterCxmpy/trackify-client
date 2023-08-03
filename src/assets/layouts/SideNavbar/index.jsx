@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import styles from './index.module.css';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { GrOverview, GrProjects } from 'react-icons/gr';
 import { AiOutlineTeam, AiOutlineUser } from 'react-icons/ai';
 import { ThemeToggle } from '../../components';
 
 export default function SideNavbar() {
   const [navButtons, setNavButtons] = useState([
-    { icon: <GrOverview />, content: 'Overview', isActive: true },
-    { icon: <GrProjects />, content: 'Projects', isActive: false },
-    { icon: <AiOutlineTeam />, content: 'Team', isActive: false },
+    { icon: <GrOverview />, content: 'Overview', isActive: true, to: "/dashboard" },
+    { icon: <GrProjects />, content: 'Projects', isActive: false, to: "/dashboard/projects" },
+    { icon: <AiOutlineTeam />, content: 'Team', isActive: false, to: "/dashboard/teams" },
   ]);
 
   const handleNavButtonClick = (index) => {
@@ -32,6 +32,7 @@ export default function SideNavbar() {
               content={btn.content}
               isActive={btn.isActive}
               onClick={() => handleNavButtonClick(index)}
+              to={btn.to}
             />
           ))}
           <div className={`${styles['nav-btn']} ${styles['username']}`}>
@@ -46,12 +47,14 @@ export default function SideNavbar() {
   );
 }
 
-function NavBtn({ icon, content, isActive, onClick }) {
+function NavBtn({ icon, content, isActive, onClick, to }) {
   return (
     <div className={`${styles['nav-btn']} ${isActive ? styles['active'] : ''}`} onClick={onClick}>
       <div className={styles['current']}></div>
       {icon}
-      <span className={styles['btn']}>{content}</span>
+      <Link className={styles['btn']} to={to}>
+        <span className={styles['btn']}>{content}</span>
+      </Link>
     </div>
   );
 }

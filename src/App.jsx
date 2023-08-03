@@ -26,6 +26,8 @@ function App() {
 
         <Route path="/dashboard" element={<SidenavbarLayout />}>
           <Route index element={<DashboardContainer />} />
+          <Route path='projects' element={<h1>Projects</h1>} />
+          <Route path='teams' element={<h1>Teams</h1>} />
         </Route>
       </Routes>
     </>

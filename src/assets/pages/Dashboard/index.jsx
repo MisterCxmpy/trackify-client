@@ -13,11 +13,10 @@ export default function Dashboard() {
           <div className={`${styles['item']} ${styles['activity']}`}></div>
           <div className={`${styles['item']} ${styles['progress']}`}></div>
           <div className={styles['recently-completed']}>
-            <div className={`${styles['completed-items']}`}></div>
-            <div className={`${styles['completed-items']}`}></div>
-            <div className={`${styles['completed-items']}`}></div>
+            <h3>Recent Activity</h3>
             <div className={`${styles['completed-items']}`}></div>
           </div>
+          <div className={`${styles['item']} ${styles['leaderboard']}`}></div>
         </div>
       </div>
     </div>

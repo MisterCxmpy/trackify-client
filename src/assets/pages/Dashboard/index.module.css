@@ -18,7 +18,7 @@
 .item, .completed-items {
   width: auto;
   height: 250px;
-  background: var(--accent-color);
+  background: var(--tertiary-background);
 }
 
 .completed-items {
@@ -33,8 +33,9 @@
   grid-row-gap: 20px;
 }
 
-.acitve-bugs, .team-members, .remaining-bugs, .activity, .progress, .recently-completed {
+.acitve-bugs, .team-members, .remaining-bugs, .activity, .progress, .recently-completed, .completed-items, .leaderboard {
   border-radius: 15px;
+  padding: 20px;
 }
 
 .acitve-bugs {
@@ -58,13 +59,28 @@
 }
 
 .recently-completed {
-  grid-area: 3/1/4/4;
+  grid-area: 3/1/3/3;
+}
+
+.leaderboard {
+  grid-area: 3/3/3/4;
 }
 
 .recently-completed {
   display: grid;
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(auto-fit, 100px);
   grid-row-gap: 20px;
+  background: var(--accent-color);
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding-top: 80px;
+  position: relative;
+}
+.recently-completed > h3 {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 1.5rem;
 }
 
 .activity, .progress {
