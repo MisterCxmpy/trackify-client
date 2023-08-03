@@ -2,8 +2,21 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Navbar, SideNavbar } from './assets/layouts';
 import { Dashboard, Landing } from './assets/pages';
+import { useEffect } from 'react';
 
 function App() {
+
+  let theme = localStorage.getItem("theme");
+
+  if (!theme) {
+    theme = "light";
+    localStorage.setItem("theme", theme);
+  }
+
+  useEffect(() => {
+    document.querySelector('body').setAttribute('data-theme', theme);
+  }, [theme]);
+
   return (
     <>
       <Routes>
@@ -47,7 +60,7 @@ function LandingContainer() {
 
 function DashboardContainer() {
   return (
-    <div className="container">
+    <div className="dashboard-container">
       <Dashboard />
     </div>
   );

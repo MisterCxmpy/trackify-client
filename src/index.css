@@ -40,6 +40,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   transition: background 0.1s;
+  font-family: 'Oswald', sans-serif;
+  color: var(--primary-text);
 }
 
 h1, h2, h3, h4, h5, h6 {

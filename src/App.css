@@ -1,8 +1,13 @@
-
 .container {
   max-width: 1440px;
   width: 100%;
   height: auto;
   display: flex;
   margin: 0 auto;
+}
+
+.dashboard-container {
+  width: 100%;
+  height: auto;
+  display: flex;
 }

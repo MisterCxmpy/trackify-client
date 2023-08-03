@@ -9,22 +9,27 @@ export default function ThemeToggle() {
   const setDarkMode = () => {
     document.querySelector('body').setAttribute('data-theme', 'dark');
     setIsDarkMode(true);
+    localStorage.setItem("theme", "dark")
   };
 
   const setLightMode = () => {
     document.querySelector('body').setAttribute('data-theme', 'light');
     setIsDarkMode(false);
+    localStorage.setItem("theme", "light")
   };
 
   const toggleTheme = () => {
     const body = document.querySelector('body');
     const currentTheme = body.getAttribute('data-theme');
 
+    
     if (currentTheme === 'dark') {
       setLightMode();
     } else {
       setDarkMode();
     }
+    
+    
   };
 
   return (

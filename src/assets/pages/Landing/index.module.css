@@ -24,11 +24,6 @@
   gap: 20px;
 }
 
-.main-heading, .sub-heading, .button, .content, .feature-tooltip, .input-section {
-  font-family: "Oswald", sans-serif;
-  color: var(--primary-text);
-}
-
 .main-heading {
   font-size: 3.8rem;
   width: 40%;
@@ -245,8 +240,7 @@
   align-items: center;
   margin: 0 auto;
 }
-
-.contact-form > form {
+.contact-form form {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -283,6 +277,7 @@
   color: var(--primary-text);
   font-size: 16px;
   background: var(--secondary-background);
+  font-family: "Oswald", sans-serif;
   border: 1.75px solid var(--primary-text);
 }
 .input-section textarea {
