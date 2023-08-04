@@ -43,6 +43,14 @@
       font-size: 1.2rem;
     }
 
+    > .statistics {
+      position: absolute;
+      bottom: 0;;
+      left: 0;
+      font-size: 1.2rem;
+      width: auto;
+    }
+
     > .count {
       align-self: flex-end;
       margin-top: auto;

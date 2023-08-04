@@ -2,7 +2,9 @@ import React from 'react'
 import styles from './index.module.css'
 import { VscDebugConsole, VscDebugAltSmall } from "react-icons/vsc"
 import { RiTeamLine } from "react-icons/ri"
-import { DashboardItem } from '../../components'
+import { BsActivity } from "react-icons/bs"
+import OverviewItem from '../../components/Overview Components/OverviewItem'
+import { OverviewActivity } from '../../components'
 
 export default function Dashboard() {
   return (
@@ -10,28 +12,28 @@ export default function Dashboard() {
       <h1 className={styles['title']}>Overview</h1>
       <div className={styles['content']}>
         <div className={styles['overview-content']}>
-        <DashboardItem
-        icon={<VscDebugConsole />}
-        title="No. Active Bugs"
-        subHeading="There are currently 5 active bugs!"
-        count="Bug Count: 5"
-        itemStyle={styles['acitve-bugs']}
-        />
-        <DashboardItem
-          icon={<RiTeamLine />}
-          title="No. Team Members"
-          subHeading="There are currently 25 team members!"
-          count="Team Members: 25"
-          itemStyle={styles['team-members']}
-        />
-        <DashboardItem
-          icon={<VscDebugAltSmall />}
-          title="No. Remaining Bugs"
-          subHeading="There are currently 49 remaining bugs!"
-          count="Remaining Bugs: 49"
-          itemStyle={styles['remaining-bugs']}
-        />
-          <div className={`${styles['item']} ${styles['activity']}`}></div>
+          <OverviewItem
+            icon={<VscDebugConsole />}
+            title="No. Active Tickets"
+            subHeading="There are currently 5 active Tickets!"
+            count="Tickets Count: 5"
+            itemStyle={styles['acitve-bugs']}
+          />
+          <OverviewItem
+            icon={<RiTeamLine />}
+            title="No. Team Members"
+            subHeading="There are currently 25 team members!"
+            count="Team Members: 25"
+            itemStyle={styles['team-members']}
+          />
+          <OverviewItem
+            icon={<VscDebugAltSmall />}
+            title="No. Remaining Tickets"
+            subHeading="There are currently 49 remaining Tickets!"
+            count="Remaining Tickets: 49"
+            itemStyle={styles['remaining-bugs']}
+          />
+          <OverviewActivity icon={<BsActivity />} title="Activity" itemStyle={styles['activity']} />
           <div className={`${styles['item']} ${styles['progress']}`}></div>
           <div className={styles['recently-completed']}>
             <h3>Recent Activity</h3>

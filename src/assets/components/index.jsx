@@ -1,3 +1,4 @@
 export {default as ThemeToggle} from "./ThemeToggle"
-export {default as Overview} from "./Overview"
-export {default as DashboardItem} from "./DashboardItem"
+export {default as Overview} from "./Overview Components/Overview"
+export {default as OverviewItem} from "./Overview Components/OverviewItem"
+export {default as OverviewActivity} from "./Overview Components/OverviewActivity"

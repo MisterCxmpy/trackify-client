@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import styles from './index.module.css'
 
-const DashboardItem = ({ icon, title, subHeading, count, itemStyle }) => {
+export default function OverviewActivity({ icon, title, itemStyle }) {
   return (
     <div className={`${styles['item']} ${itemStyle}`}>
       <div className={styles['heading']}>
@@ -9,11 +9,8 @@ const DashboardItem = ({ icon, title, subHeading, count, itemStyle }) => {
         <h1>{title}</h1>
       </div>
       <div className={styles['inner-content']}>
-        <span className={styles['sub-heading']}>{subHeading}</span>
-        <h1 className={styles['count']}>{count}</h1>
+        <div className={`${styles['completed-items']}`}></div>
       </div>
     </div>
-  );
-};
-
-export default DashboardItem;
+  )
+}
