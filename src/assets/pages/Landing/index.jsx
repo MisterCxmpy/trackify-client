@@ -191,18 +191,19 @@ function Showcase() {
 function About() {
   return (
     <div className={styles['about']} id='about'>
-      <AboutInfo content={"Trackify allows users to effortlessly create detailed bug reports, capturing critical information like the bug's description, severity, and steps to reproduce, ensuring clear and comprehensive communication."} image={<AiOutlineIssuesClose />} isReverse={false}/>
-      <AboutInfo content={"With Trackify's robust tracking capabilities, teams can monitor the progress of each bug, from creation to resolution, ensuring nothing slips through the cracks, promoting efficient bug management."} image={<AiFillBug />} isReverse={true}/>
-      <AboutInfo content={"Trackify facilitates seamless collaboration among team members by providing tools for assigning bugs, commenting, and sharing updates, fostering effective teamwork in resolving issues promptly."} image={<AiOutlineTeam />} isReverse={false}/>
-      <AboutInfo content={"Trackify empowers users with insightful bug reporting and analytics, offering key metrics on bug trends, resolution times, and project health, aiding data-driven decision-making for continuous improvement."} image={<MdOutlineAnalytics />} isReverse={true}/>
+      <AboutInfo title={"Issue Creation"} content={"Trackify allows users to effortlessly create detailed bug reports, capturing critical information like the bug's description, severity, and steps to reproduce, ensuring clear and comprehensive communication."} image={<AiOutlineIssuesClose />} isReverse={false}/>
+      <AboutInfo title={"Issue Tracking"} content={"With Trackify's robust tracking capabilities, teams can monitor the progress of each bug, from creation to resolution, ensuring nothing slips through the cracks, promoting efficient bug management."} image={<AiFillBug />} isReverse={true}/>
+      <AboutInfo title={"Team Collaboration"} content={"Trackify facilitates seamless collaboration among team members by providing tools for assigning bugs, commenting, and sharing updates, fostering effective teamwork in resolving issues promptly."} image={<AiOutlineTeam />} isReverse={false}/>
+      <AboutInfo title={"Reporting and Analytics"} content={"Trackify empowers users with insightful bug reporting and analytics, offering key metrics on bug trends, resolution times, and project health, aiding data-driven decision-making for continuous improvement."} image={<MdOutlineAnalytics />} isReverse={true}/>
     </div>
   )
 }
 
-function AboutInfo({ content, image, isReverse }) {
+function AboutInfo({ title, content, image, isReverse }) {
 
   return (
     <div className={`${styles['about-info']} ${isReverse ? styles["reverse"] : null}`}>
+      <h1 className={styles['about-title']}>{title}</h1>
       <div className={styles['image']}>{image}</div>
       <span className={styles['content']}>{content}</span>
     </div>

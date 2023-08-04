@@ -210,10 +210,22 @@
   margin: 0 auto;
   align-items: center;
   gap: 20px;
+  position: relative;
+}
+.about .about-info > .about-title {
+  position: absolute;
+  font-size: 4rem;
+  top: -5%;
+  left: 20%;
+  width: auto;
 }
 .about .about-info.reverse {
   flex-direction: row-reverse;
   text-align: right;
+}
+.about .about-info.reverse > .about-title {
+  left: 0;
+  right: 20%;
 }
 .about .about-info > .image {
   min-width: 20rem;

@@ -229,10 +229,24 @@
     margin: 0 auto;
     align-items: center;
     gap: 20px;
+    position: relative;
+
+    > .about-title {
+      position: absolute;
+      font-size: 4rem;
+      top: -5%;
+      left: 20%;
+      width: auto;
+    }
 
     &.reverse {
       flex-direction: row-reverse;
       text-align: right;
+
+      > .about-title {
+        left: 0;
+        right: 20%;
+      }
     }
 
     > .image {
