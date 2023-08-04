@@ -3,8 +3,8 @@ import styles from './index.module.css'
 import { VscDebugConsole, VscDebugAltSmall } from "react-icons/vsc"
 import { RiTeamLine } from "react-icons/ri"
 import { BsActivity } from "react-icons/bs"
-import OverviewItem from '../../components/Overview Components/OverviewItem'
-import { OverviewActivity } from '../../components'
+import { GiProgression } from "react-icons/gi"
+import { OverviewActivity, OverviewItem, OverviewProgress } from '../../components'
 
 export default function Dashboard() {
   return (
@@ -34,7 +34,7 @@ export default function Dashboard() {
             itemStyle={styles['remaining-bugs']}
           />
           <OverviewActivity icon={<BsActivity />} title="Activity" itemStyle={styles['activity']} />
-          <div className={`${styles['item']} ${styles['progress']}`}></div>
+          <OverviewProgress icon={<GiProgression />} title="Progress" itemStyle={styles['progress']} />
           <div className={styles['recently-completed']}>
             <h3>Recent Activity</h3>
             <div className={`${styles['completed-items']}`}></div>

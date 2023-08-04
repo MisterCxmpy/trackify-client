@@ -3,11 +3,11 @@ import styles from './index.module.css'
 
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import { Line, Pie } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 
 Chart.register(CategoryScale);
 
-export default function OverviewActivity({ icon, title, itemStyle }) {
+export default function OverviewProgress({ icon, title, itemStyle }) {
 
   const [chartData, setChartData] = useState({
     labels: [2004, 2003, 2006, 2002, 2005], 
@@ -35,7 +35,7 @@ export default function OverviewActivity({ icon, title, itemStyle }) {
         <h1>{title}</h1>
       </div>
       <div className={styles['inner-content']}>
-        <Line
+        <Pie
             data={chartData}
             options={{
               plugins: {
