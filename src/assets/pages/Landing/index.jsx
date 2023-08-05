@@ -3,6 +3,7 @@ import styles from './index.module.css';
 import { MdOutlineAnalytics } from 'react-icons/md';
 import { AiOutlineIssuesClose, AiFillBug, AiOutlineTeam } from 'react-icons/ai';
 import { Link } from 'react-scroll';
+import { useForm } from '../../contexts/FormContext';
 
 export default function Landing() {
   const [cursorPosition, setCursorPosition] = useState({ left: 0, top: 0 });
@@ -58,8 +59,15 @@ function Hero({ handleButtonHover }) {
 }
 
 function HoverButton({handleButtonHover, content}) {
+  
+  const { setFormType, setFormActive } = useForm()
+
   return (
     <button className={styles['button']}
+      onClick={() => {
+        setFormActive(true)
+        setFormType("signup")
+      }}
       onMouseEnter={() => handleButtonHover(true)}
       onMouseLeave={() => handleButtonHover(false)}>{content}
     </button>

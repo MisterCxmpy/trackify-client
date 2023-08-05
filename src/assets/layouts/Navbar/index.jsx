@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { Link } from 'react-scroll'
 import styles from "./index.module.css"
-import { ThemeToggle } from '../../components'
+import { Form, ThemeToggle } from '../../components'
+import { useForm } from '../../contexts/FormContext'
 
 export default function Navbar() {
+
+
+  const { setFormType, setFormActive } = useForm()
 
   return (
     <>
@@ -18,9 +22,13 @@ export default function Navbar() {
         </div>
         <div className={styles['other']}>
           <ThemeToggle />
-          <button className={`${styles['sign-in-btn']} ${styles['btn']}`}>sign in</button>
+          <button className={`${styles['sign-in-btn']} ${styles['btn']}`} onClick={() => {
+            setFormActive(true)
+            setFormType("signin")
+          }}>sign in</button>
         </div>
       </div>
+      <Form />
       <Outlet />
     </>
   )

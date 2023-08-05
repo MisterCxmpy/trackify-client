@@ -1,12 +1,23 @@
-.sign-up {
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5019607843);
+  z-index: 5000;
+}
+
+.form {
   position: relative;
   width: 100%;
   height: auto;
-  padding-bottom: 300px;
-  margin-top: 125px;
+  overflow: hidden;
 }
 
-.sign-up-form {
+.main-form {
   max-width: 600px;
   width: 600px;
   height: -moz-fit-content;
@@ -17,8 +28,9 @@
   align-items: center;
   margin: 0 auto;
   background: var(--primary-background);
+  border-radius: 15px;
 }
-.sign-up-form form {
+.main-form form {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,6 +39,25 @@
   gap: 40px;
   box-shadow: var(--box-shadow);
   border-radius: 15px;
+  position: relative;
+}
+.main-form form .close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 12.5px;
+  right: 12.5px;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+}
+.main-form form .redirect-btn {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 200;
+  text-decoration: underline;
 }
 
 .input-section {
@@ -49,7 +80,6 @@
   transition: 0.3s;
 }
 .input-section > input,
-.input-section > textarea,
 .input-section > button {
   width: 100%;
   box-sizing: border-box;
@@ -62,17 +92,8 @@
   font-family: "Oswald", sans-serif;
   border: 1.75px solid var(--primary-text);
 }
-.input-section textarea {
-  resize: none;
-  height: 300px;
-}
-.input-section textarea ~ span {
-  top: 25px;
-}
 .input-section > input:focus ~ span,
-.input-section > input:valid ~ span,
-.input-section > textarea:focus ~ span,
-.input-section > textarea:valid ~ span {
+.input-section > input:valid ~ span {
   top: -20px;
   left: -5px;
   font-size: 14px;

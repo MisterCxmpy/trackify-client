@@ -1,12 +1,25 @@
-.sign-up {
+
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00000080;
+  z-index: 5000;
+}
+
+.form {
   position: relative;
   width: 100%;
   height: auto;
-  padding-bottom: 300px;
-  margin-top: 125px;
+  overflow: hidden;
 }
 
-.sign-up-form {
+.main-form {
   max-width: 600px;
   width: 600px;
   height: fit-content;
@@ -16,6 +29,7 @@
   align-items: center;
   margin: 0 auto;
   background: var(--primary-background);
+  border-radius: 15px;
 
   form {
     display: flex;
@@ -26,8 +40,31 @@
     gap: 40px;
     box-shadow: var(--box-shadow);
     border-radius: 15px;
+    position: relative;
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      position: absolute;
+      top: 12.5px;
+      right: 12.5px;
+      height: 25px;
+      width: 25px;
+      line-height: 25px;
+    }
+
+    .redirect-btn {
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      font-weight: 200;
+      text-decoration: underline;
+    }
   }
 }
+
+
 
 .input-section {
   width: 100%;
@@ -51,7 +88,6 @@
   }
 
   > input,
-  > textarea,
   > button {
     width: 100%;
     box-sizing: border-box;
@@ -65,19 +101,9 @@
     border: 1.75px solid var(--primary-text);
   }
 
-  textarea {
-    resize: none;
-    height: 300px;
-
-    ~ span {
-      top: 25px;
-    }
-  }
 
   > input:focus ~ span,
-  > input:valid ~ span, 
-  > textarea:focus ~ span,
-  > textarea:valid ~ span {
+  > input:valid ~ span {
     top: -20px;
     left: -5px;
     font-size: 14px;
