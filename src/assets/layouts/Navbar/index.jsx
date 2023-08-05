@@ -18,7 +18,7 @@ export default function Navbar() {
         </div>
         <div className={styles['other']}>
           <ThemeToggle />
-          <NewLink classes={["sign-in-btn", "btn"]} to={"/"} content={"sign in"} />
+          <button className={`${styles['sign-in-btn']} ${styles['btn']}`}>sign in</button>
         </div>
       </div>
       <Outlet />

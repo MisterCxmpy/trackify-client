@@ -241,6 +241,19 @@
   font-size: 1.5rem;
 }
 
+.contact {
+  position: relative;
+  padding-bottom: 200px;
+}
+.contact > .title {
+  font-size: 6rem;
+  position: absolute;
+  top: -15%;
+  left: 0;
+  z-index: -500;
+  text-transform: uppercase;
+}
+
 .contact-form {
   max-width: 700px;
   width: 700px;
@@ -251,6 +264,7 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  background: var(--primary-background);
 }
 .contact-form form {
   display: flex;

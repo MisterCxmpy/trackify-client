@@ -33,6 +33,11 @@
   --secondary-text: #fff;
 }
 
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
 body {
   background: var(--primary-background);
 }

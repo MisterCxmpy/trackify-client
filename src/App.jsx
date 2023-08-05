@@ -1,11 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Navbar, SideNavbar } from './assets/layouts';
+import { Footer, Navbar, SideNavbar } from './assets/layouts';
 import { Dashboard, Landing } from './assets/pages';
 import { useEffect } from 'react';
 
 function App() {
-
   let theme = localStorage.getItem("theme");
 
   if (!theme) {
@@ -21,51 +20,30 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<NavbarLayout />}>
-          <Route index element={<LandingContainer />} />
+          <Route index element={<LayoutWrapper className="container"><Landing /></LayoutWrapper>} />
         </Route>
 
         <Route path="/dashboard" element={<SidenavbarLayout />}>
-          <Route index element={<DashboardContainer />} />
-          <Route path='projects' element={<h1>Projects</h1>} />
-          <Route path='teams' element={<h1>Teams</h1>} />
+          <Route index element={<LayoutWrapper className="dashboard-container"><Dashboard /></LayoutWrapper>} />
+          <Route path='projects' element={<LayoutWrapper className="dashboard-container"><h1>Projects</h1></LayoutWrapper>} />
+          <Route path='teams' element={<LayoutWrapper className="dashboard-container"><h1>Teams</h1></LayoutWrapper>} />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 }
 
-function NavbarLayout({ children }) {
-  return (
-    <>
-      <Navbar />
-      {children}
-    </>
-  );
+function LayoutWrapper({ children, className }) {
+  return <div className={className}>{children}</div>;
 }
 
-function SidenavbarLayout({ children }) {
-  return (
-    <>
-      <SideNavbar />
-      {children}
-    </>
-  );
+function NavbarLayout() {
+  return <Navbar />;
 }
 
-function LandingContainer() {
-  return (
-    <div className="container">
-      <Landing />
-    </div>
-  );
-}
-
-function DashboardContainer() {
-  return (
-    <div className="dashboard-container">
-      <Dashboard />
-    </div>
-  );
+function SidenavbarLayout() {
+  return <SideNavbar />;
 }
 
 export default App;

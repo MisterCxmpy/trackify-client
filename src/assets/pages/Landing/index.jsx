@@ -217,6 +217,7 @@ function AboutInfo({ title, content, image, isReverse }) {
 function Contact() {
   return (
     <div className={styles['contact']} id='contact'>
+      <h1 className={styles['title']}>contact us</h1>
       <div className={styles['contact-form']}>
           <form>
             <div className={styles['input-section']}>
