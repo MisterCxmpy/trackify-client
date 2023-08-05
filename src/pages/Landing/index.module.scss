@@ -207,12 +207,17 @@
 }
 
 .showcase {
-  
+
   > .image {
     width: 80%;
     height: 700px;
-    background: var(--primary-text);
     margin: 0 auto;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+
+    > img {
+      border-radius: 15px;
+    }
   }
 }
 

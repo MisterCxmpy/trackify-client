@@ -4,6 +4,7 @@ import { MdOutlineAnalytics } from 'react-icons/md';
 import { AiOutlineIssuesClose, AiFillBug, AiOutlineTeam } from 'react-icons/ai';
 import { Link } from 'react-scroll';
 import { useForm } from '../../contexts/FormContext';
+import { showcase } from '../../assets';
 
 export default function Landing() {
   const [cursorPosition, setCursorPosition] = useState({ left: 0, top: 0 });
@@ -187,7 +188,9 @@ function FeatureTooltip({content}) {
 function Showcase() {
   return (
     <div className={styles['showcase']} id='showcase'>
-      <div className={styles['image']}></div>
+      <div className={styles['image']}>
+        <img src={showcase} alt="" />
+      </div>
     </div>
   )
 }

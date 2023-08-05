@@ -1,0 +1,1 @@
+export {default as showcase} from "./app.png"

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Footer, Navbar, SideNavbar } from './assets/layouts';
-import { Dashboard, Landing } from './assets/pages';
+import { Footer, Navbar, SideNavbar } from './layouts';
+import { Dashboard, Landing } from './pages';
 import { useEffect } from 'react';
 
 function App() {
