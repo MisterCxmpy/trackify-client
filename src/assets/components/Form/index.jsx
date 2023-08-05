@@ -3,35 +3,27 @@ import styles from './index.module.css';
 import { useForm } from '../../contexts/FormContext';
 
 export default function Form() {
-
-  const { formType, setFormType, formActive, setFormActive } = useForm()
+  const { formType, setFormType, formActive, setFormActive } = useForm();
 
   const isSignIn = formType === 'signin';
   const isSignUp = formType === 'signup';
 
   const toggleForm = () => {
     if (isSignIn) {
-      setFormType("signup");
+      setFormType('signup');
     } else if (isSignUp) {
-      setFormType("signin");
+      setFormType('signin');
     }
   };
 
-  if (formActive) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
-
   useEffect(() => {
-
-    console.log(formActive)
-  }, [formActive])
+    document.body.style.overflow = formActive ? 'hidden' : 'auto';
+  }, [formActive]);
 
   return formActive ? (
     <div className={styles['overlay']}>
-      <div className={styles["form"]}>
-        <div className={styles["main-form"]}>
+      <div className={styles['form']}>
+        <div className={styles['main-form']}>
           <form>
             <button type='button' onClick={() => setFormActive(false)} className={styles['close-btn']}>
               &times;
