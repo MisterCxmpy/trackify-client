@@ -1,1 +1,77 @@
-/*# sourceMappingURL=index.module.css.map */
+.item, .completed-items, .recently-completed {
+  position: relative;
+  width: auto;
+  height: 250px;
+  background: var(--tertiary-background);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.completed-items {
+  height: 100px;
+}
+
+.overview-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.acitve-bugs, .team-members, .remaining-bugs, .activity, .progress, .recently-completed, .completed-items, .leaderboard {
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.acitve-bugs {
+  grid-area: 1/1/2/2;
+}
+
+.team-members {
+  grid-area: 1/2/2/3;
+}
+
+.remaining-bugs {
+  grid-area: 1/3/2/4;
+}
+
+.activity {
+  grid-area: 2/1/3/3;
+}
+
+.progress {
+  grid-area: 2/3/3/4;
+}
+
+.recently-completed {
+  grid-area: 3/1/3/3;
+}
+
+.leaderboard {
+  grid-area: 3/3/3/4;
+}
+
+.recently-completed {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 100px);
+  grid-row-gap: 20px;
+  background: var(--tertiary-background);
+  height: -moz-fit-content !important;
+  height: fit-content !important;
+  padding-top: 80px;
+  position: relative;
+}
+.recently-completed > h3 {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.recently-completed .completed-items {
+  box-shadow: rgba(var(--opposite-background), 0.4) 0px 0px 0px 2px, rgba(var(--opposite-background), 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.activity, .progress {
+  height: 550px !important;
+}/*# sourceMappingURL=index.module.css.map */

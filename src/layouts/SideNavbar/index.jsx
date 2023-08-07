@@ -8,7 +8,7 @@ import { ThemeToggle } from '../../components';
 export default function SideNavbar() {
   const [navButtons, setNavButtons] = useState([
     { icon: <GrOverview />, content: 'Overview', isActive: true, to: "/dashboard" },
-    { icon: <GrProjects />, content: 'Projects', isActive: false, to: "/dashboard/projects" },
+    { icon: <GrProjects />, content: 'Tickets', isActive: false, to: "/dashboard/tickets" },
     { icon: <AiOutlineTeam />, content: 'Team', isActive: false, to: "/dashboard/teams" },
   ]);
 

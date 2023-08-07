@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import { Footer, Navbar, SideNavbar } from './layouts';
-import { Dashboard, Landing } from './pages';
+import { Navbar, SideNavbar } from './layouts';
+import { Landing, OverviewPage } from './pages';
 import { useEffect } from 'react';
+import './App.css';
+import styles from './App.module.css'
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -24,18 +25,32 @@ function App() {
         </Route>
 
         <Route path="/dashboard" element={<SidenavbarLayout />}>
-          <Route index element={<LayoutWrapper className="dashboard-container"><Dashboard /></LayoutWrapper>} />
-          <Route path='projects' element={<LayoutWrapper className="dashboard-container"><h1>Projects</h1></LayoutWrapper>} />
-          <Route path='teams' element={<LayoutWrapper className="dashboard-container"><h1>Teams</h1></LayoutWrapper>} />
+          <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
+          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><h1>Tickets</h1></LayoutWrapper>} />
+          <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><h1>Teams</h1></LayoutWrapper>} />
         </Route>
       </Routes>
-      <Footer />
     </>
   );
 }
 
-function LayoutWrapper({ children, className }) {
-  return <div className={className}>{children}</div>;
+function LayoutWrapper({ children, className, title }) {
+  return (
+    className == "dashboard-container" ?
+    <div className={className}>
+      <div className={styles['dashboard']}>
+        <h1 className={styles['title']}>{title}</h1>
+        <div className={styles['content']}>
+          {children}
+        </div>
+      </div>
+    </div>
+    : 
+    <div className={"container"}>
+      {children}
+    </div>
+  )
+  
 }
 
 function NavbarLayout() {

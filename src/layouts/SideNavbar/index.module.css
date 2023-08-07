@@ -9,6 +9,7 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
+  background: var(--primary-background);
 }
 
 .title, .btn {
@@ -63,4 +64,5 @@
 
 .username {
   margin-top: auto;
+  position: sticky;
 }/*# sourceMappingURL=index.module.css.map */

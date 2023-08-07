@@ -5,6 +5,7 @@ import { AiOutlineIssuesClose, AiFillBug, AiOutlineTeam } from 'react-icons/ai';
 import { Link } from 'react-scroll';
 import { useForm } from '../../contexts/FormContext';
 import { showcase } from '../../assets';
+import { Footer } from '../../layouts';
 
 export default function Landing() {
   const [cursorPosition, setCursorPosition] = useState({ left: 0, top: 0 });
@@ -27,17 +28,20 @@ export default function Landing() {
   };
 
   return (
-    <div className={styles['landing']}>
-      <Hero handleButtonHover={handleButtonHover}/>
-      <Features />
-      <Showcase />
-      <About />
-      <Contact />
-      <div
-        className={styles['cursor']}
-        style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
-      ></div>
-    </div>
+    <>
+      <div className={styles['landing']}>
+        <Hero handleButtonHover={handleButtonHover}/>
+        <Features />
+        <Showcase />
+        <About />
+        <Contact />
+        <div
+          className={styles['cursor']}
+          style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
+        ></div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
