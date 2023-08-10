@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import { useForm } from '../../contexts/FormContext';
 
 export default function Form() {
   const { formType, setFormType, formActive, setFormActive } = useForm();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const isSignIn = formType === 'signin';
   const isSignUp = formType === 'signup';
@@ -16,6 +21,23 @@ export default function Form() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Log input values
+    console.log('First Name:', firstName);
+    console.log('Last Name:', lastName);
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Confirm Password:', confirmPassword);
+
+    // You can also reset the form fields here if needed
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+  };
+
   useEffect(() => {
     document.body.style.overflow = formActive ? 'hidden' : 'auto';
   }, [formActive]);
@@ -24,7 +46,7 @@ export default function Form() {
     <div className={styles['overlay']}>
       <div className={styles['form']}>
         <div className={styles['main-form']}>
-          <form>
+          <form onSubmit={handleSubmit}>
             <button type='button' onClick={() => setFormActive(false)} className={styles['close-btn']}>
               &times;
             </button>
@@ -34,26 +56,26 @@ export default function Form() {
             {isSignUp && (
               <>
                 <div className={styles['input-section']}>
-                  <input type='text' required />
+                  <input type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
                   <span>First name</span>
                 </div>
                 <div className={styles['input-section']}>
-                  <input type='text' required />
+                  <input type='text' value={lastName} onChange={(e) => setLastName(e.target.value)} required />
                   <span>Last name</span>
                 </div>
               </>
             )}
             <div className={styles['input-section']}>
-              <input type='text' required />
+              <input type='text' value={email} onChange={(e) => setEmail(e.target.value)} required />
               <span>Email</span>
             </div>
             <div className={styles['input-section']}>
-              <input type='password' required />
+              <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} required />
               <span>Password</span>
             </div>
             {isSignUp && (
               <div className={styles['input-section']}>
-                <input type='password' required />
+                <input type='password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                 <span>Confirm password</span>
               </div>
             )}

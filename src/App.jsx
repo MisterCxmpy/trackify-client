@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Navbar, SideNavbar } from './layouts';
-import { Landing, OverviewPage } from './pages';
+import { Landing, OverviewPage, TeamsPage } from './pages';
 import { useEffect } from 'react';
 import './App.css';
 import styles from './App.module.css'
@@ -27,7 +27,7 @@ function App() {
         <Route path="/dashboard" element={<SidenavbarLayout />}>
           <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
           <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><h1>Tickets</h1></LayoutWrapper>} />
-          <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><h1>Teams</h1></LayoutWrapper>} />
+          <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} />
         </Route>
       </Routes>
     </>
