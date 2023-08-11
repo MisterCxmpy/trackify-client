@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './index.module.css';
 import { useForm } from '../../contexts/FormContext';
+import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
   const { formType, setFormType, formActive, setFormActive } = useForm();
@@ -13,6 +15,10 @@ export default function Form() {
   const isSignIn = formType === 'signin';
   const isSignUp = formType === 'signup';
 
+  const { signup, login } = useAuth()
+
+  const navigate = useNavigate()
+
   const toggleForm = () => {
     if (isSignIn) {
       setFormType('signup');
@@ -21,16 +27,28 @@ export default function Form() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Log input values
-    console.log('First Name:', firstName);
-    console.log('Last Name:', lastName);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
 
-    // You can also reset the form fields here if needed
+    if (formType === "signup") {
+      if (password === confirmPassword) {
+        await signup({
+          "first_name": firstName,
+          "last_name": lastName,
+          "email": email,
+          "password": password
+        })
+        
+        setFormType('signin');
+      }
+    } else if (formType === "signin") {
+      await login({
+        "email": email,
+        "password": password
+      })
+      navigate("/dashboard")
+    }
+
     setFirstName('');
     setLastName('');
     setEmail('');
