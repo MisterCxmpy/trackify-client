@@ -49,12 +49,17 @@ export default function Form() {
       navigate("/dashboard")
     }
 
+    resetForm()
+  };
+
+  const resetForm = () => {
     setFirstName('');
     setLastName('');
     setEmail('');
     setPassword('');
     setConfirmPassword('');
-  };
+    setFormActive(false)
+  }
 
   useEffect(() => {
     document.body.style.overflow = formActive ? 'hidden' : 'auto';
