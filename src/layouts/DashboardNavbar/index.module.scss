@@ -1,47 +1,28 @@
-.side-navbar {
+.navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  height: calc(100% - 46px);
-  width: 250px;
-  padding: 20px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: column;
-  background: var(--primary-background);
-  margin-top: 46px;
-}
-
-.title, .btn {
-  color: var(--primary-text);
-  font-family: 'Oswald', sans-serif;
-  cursor: pointer;
-}
-
-.title {
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.navbar-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
   width: 100%;
-  height: 100%;
+  height: 46px;
+  backdrop-filter: blur(0.3rem);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-background);
+  z-index: 1000;
 }
 
 .nav-btn {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
   position: relative;
-  padding-left: 50px;
   cursor: pointer;
   
+  &.username {
+    justify-content: end;
+  }
+
   > svg {
     color: var(--primary-text);
     fill: var(--primary-text);
@@ -64,9 +45,4 @@
   padding: 10px 15px;
   font-size: 16px;
   text-transform: uppercase;
-}
-
-.username {
-  margin-top: auto;
-  position: sticky;
 }

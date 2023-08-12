@@ -7,6 +7,7 @@
   margin: 0 auto;
   position: relative;
   margin-left: max(295px, calc((100% - 1520px) / 2));
+  margin-top: 46px;
 }
 
 .title {

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Navbar, SideNavbar } from './layouts';
+import { DashboardNavbar, Navbar, SideNavbar } from './layouts';
 import { Landing, OverviewPage, TeamsPage } from './pages';
 import { useEffect } from 'react';
 import './App.css';
@@ -37,14 +37,17 @@ function App() {
 function LayoutWrapper({ children, className, title }) {
   return (
     className == "dashboard-container" ?
-    <div className={className}>
-      <div className={styles['dashboard']}>
-        <h1 className={styles['title']}>{title}</h1>
-        <div className={styles['content']}>
-          {children}
+    <>
+      <DashboardNavbar />
+      <div className={className}>
+        <div className={styles['dashboard']}>
+          <h1 className={styles['title']}>{title}</h1>
+          <div className={styles['content']}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </>
     : 
     <div className={"container"}>
       {children}
