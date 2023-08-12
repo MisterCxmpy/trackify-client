@@ -22,7 +22,6 @@ export default function SideNavbar() {
   return (
     <>
       <div className={styles['side-navbar']}>
-        <h1 className={styles['title']}>Trackify</h1>
         <div className={styles['navbar-buttons']}>
           {navButtons.map((btn, index) => (
             <NavBtn

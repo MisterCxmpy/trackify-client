@@ -22,14 +22,12 @@ export default function ThemeToggle() {
     const body = document.querySelector('body');
     const currentTheme = body.getAttribute('data-theme');
 
-    
     if (currentTheme === 'dark') {
       setLightMode();
     } else {
       setDarkMode();
     }
-    
-    
+  
   };
 
   return (

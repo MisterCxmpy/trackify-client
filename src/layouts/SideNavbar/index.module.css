@@ -13,15 +13,10 @@
   margin-top: 46px;
 }
 
-.title, .btn {
+.btn {
   color: var(--primary-text);
   font-family: "Oswald", sans-serif;
   cursor: pointer;
-}
-
-.title {
-  font-size: 36px;
-  margin-bottom: 30px;
 }
 
 .navbar-buttons {

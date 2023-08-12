@@ -2,14 +2,29 @@ import React from 'react'
 import styles from './index.module.css'
 import { AiOutlineUser } from 'react-icons/ai';
 import { ThemeToggle } from '../../components';
+import { MdNotificationsNone, MdSearch, MdSettings } from 'react-icons/md';
 
 export default function DashboardNavbar() {
   return (
     <div className={styles['navbar']}>
-      <div className={`${styles['nav-btn']} ${styles['username']}`}>
-        {<AiOutlineUser />}
-        <span className={styles['btn']}>Username</span>
-        <ThemeToggle />
+      <h1 className={styles['title']}>Trackify</h1>
+      <div className={styles['search']}>
+        <MdSearch />
+        <input type="text" className={styles['search-bar']} required />
+        <span>Search tickets, teams and team members</span>
+      </div>
+      <div className={styles['options']}>
+        <div className={`${styles['nav-btn']}`}>
+          <span className={styles['icon']}><MdSettings /></span>
+        </div>
+        <div className={`${styles['nav-btn']}`}>
+          <span className={styles['icon']}><MdNotificationsNone /></span>
+        </div>
+        <div className={`${styles['nav-btn']} ${styles['username']}`}>
+          {<AiOutlineUser className={styles['icon']} />}
+          <span className={styles['btn']}>Username</span>
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   )
