@@ -37,6 +37,9 @@
   padding-left: 50px;
   cursor: pointer;
 }
+.nav-btn > a {
+  width: 100%;
+}
 .nav-btn > svg {
   color: var(--primary-text);
   fill: var(--primary-text);

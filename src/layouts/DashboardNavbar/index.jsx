@@ -4,6 +4,8 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { ThemeToggle } from '../../components';
 import { MdNotificationsNone, MdSearch, MdSettings } from 'react-icons/md';
 
+const user = JSON.parse(localStorage.getItem("user"))
+
 export default function DashboardNavbar() {
   return (
     <div className={styles['navbar']}>
@@ -22,7 +24,7 @@ export default function DashboardNavbar() {
         </div>
         <div className={`${styles['nav-btn']} ${styles['username']}`}>
           {<AiOutlineUser className={styles['icon']} />}
-          <span className={styles['btn']}>Username</span>
+          <span className={styles['btn']}>{user.username}</span>
           <ThemeToggle />
         </div>
       </div>

@@ -37,6 +37,10 @@
   position: relative;
   padding-left: 50px;
   cursor: pointer;
+
+  > a {
+    width: 100%;
+  }
   
   > svg {
     color: var(--primary-text);
