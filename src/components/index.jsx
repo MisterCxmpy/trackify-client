@@ -7,3 +7,5 @@ export {default as OverviewActivity} from "./Overview Components/OverviewActivit
 export {default as OverviewProgress} from "./Overview Components/OverviewProgress"
 
 export {default as NoTeam} from "./Team Components/NoTeam"
+
+export {default as Tickets} from "./Tickets Components/Tickets"

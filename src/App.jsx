@@ -4,6 +4,7 @@ import { Landing, OverviewPage, TeamsPage } from './pages';
 import { useEffect } from 'react';
 import './App.css';
 import styles from './App.module.css'
+import { Tickets } from './components';
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -26,8 +27,8 @@ function App() {
 
         <Route path="/dashboard" element={<SidenavbarLayout />}>
           <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
-          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><h1>Tickets</h1></LayoutWrapper>} />
-          <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} />
+          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><Tickets /></LayoutWrapper>} />
+          {/* <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} /> */}
         </Route>
       </Routes>
     </>
