@@ -8,7 +8,7 @@ export default function SideNavbar() {
   const [navButtons, setNavButtons] = useState([
     { icon: <GrOverview />, content: 'Overview', isActive: true, to: "/dashboard" },
     { icon: <GrProjects />, content: 'Tickets', isActive: false, to: "/dashboard/tickets" },
-    { icon: <AiOutlineTeam />, content: 'Team', isActive: false, to: "/dashboard/teams" },
+    { icon: <AiOutlineTeam />, content: 'Team', isActive: false, to: null, hasDropdown: true, dropdownContent: ["team1", "team2"] },
   ]);
 
   const handleNavButtonClick = (index) => {
@@ -31,6 +31,8 @@ export default function SideNavbar() {
               isActive={btn.isActive}
               onClick={() => handleNavButtonClick(index)}
               to={btn.to}
+              hasDropdown={btn.hasDropdown}
+              dropdownContent={btn.dropdownContent}
             />
           ))}
         </div>
@@ -40,14 +42,25 @@ export default function SideNavbar() {
   );
 }
 
-function NavBtn({ icon, content, isActive, onClick, to }) {
+function NavBtn({ icon, content, isActive, onClick, to, hasDropdown, dropdownContent }) {
   return (
-    <div className={`${styles['nav-btn']} ${isActive ? styles['active'] : ''}`} onClick={onClick}>
-      <div className={styles['current']}></div>
-      {icon}
-      <Link className={styles['btn']} to={to}>
-        <span className={styles['btn']}>{content}</span>
-      </Link>
-    </div>
+    <>
+      <div className={`${styles['nav-btn']} ${isActive ? styles['active'] : ''}`} onClick={onClick}>
+        <div className={styles['current']}></div>
+        {icon}
+        <Link className={styles['btn']} to={to}>
+          <span className={styles['btn']}>{content}</span>
+        </Link>
+      </div>
+      {hasDropdown && isActive ? <Dropdown teams={dropdownContent} /> : ""}
+    </>
   );
+}
+
+function Dropdown({ teams }) {
+  return ( 
+    <div className={styles['dropdown']}>
+      {teams.map((t) => <span className={styles['btn']}>{t}</span>)}
+    </div>
+  )
 }
