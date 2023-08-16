@@ -12,6 +12,8 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: difference;
+  transition: scale 0.3s;
+  transform-origin: top left;
 }
 
 .hero-heading {

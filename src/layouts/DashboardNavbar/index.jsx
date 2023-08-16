@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.css'
 import { AiOutlineUser } from 'react-icons/ai';
 import { ThemeToggle } from '../../components';
 import { MdNotificationsNone, MdSearch, MdSettings } from 'react-icons/md';
 
-const user = JSON.parse(localStorage.getItem("user"))
-
 export default function DashboardNavbar() {
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("user")))
+  }, [])
+
   return (
     <div className={styles['navbar']}>
       <h1 className={styles['title']}>Trackify</h1>

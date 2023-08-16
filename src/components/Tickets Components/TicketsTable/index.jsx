@@ -12,9 +12,11 @@ export default function TicketsTable({ data }) {
       <table className={styles['table']}>
         <thead>
           <tr className={styles['table-headings']}>
-            {
-              headings.map(heading => <th>{heading}</th>)
-            }
+            <th>Ticket ID</th>
+            <th>Title</th>
+            <th>State</th>
+            <th>Owner</th>
+            <th>Tags</th>
           </tr>
         </thead>
         <tbody className={styles['table-body']}>

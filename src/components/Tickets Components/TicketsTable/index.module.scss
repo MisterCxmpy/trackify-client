@@ -7,9 +7,15 @@
   justify-content: space-between;
 
   > button {
-    height: 100%;
-    font-size: 1.2rem;
-    padding: 5px;
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: var(--secondary-background);
+    border: 1.5px solid var(--primary-text);
+    transition: 0.1s;
+    height: -moz-max-content;
+    height: max-content;
   }
 }
 
@@ -29,13 +35,15 @@
   }
 }
 
-.table-body {
-  gap: 10px;
-}
-
 .ticket-item {
+
+  cursor: pointer;
 
   > td {
     padding: 10px;
+  }
+
+  &:hover {
+    background: #e4e4e4;
   }
 }

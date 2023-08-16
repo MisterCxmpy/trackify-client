@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import './App.css';
 import styles from './App.module.css'
 import { Tickets } from './components';
+import { useAuth } from './contexts/AuthContext';
 
 function App() {
   let theme = localStorage.getItem("theme");

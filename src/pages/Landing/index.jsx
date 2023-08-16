@@ -37,7 +37,7 @@ export default function Landing() {
         <Contact />
         <div
           className={styles['cursor']}
-          style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', opacity: isButtonHovered ? '1' : '0'}}
+          style={{ left: cursorPosition.left + 'px', top: cursorPosition.top + 'px', scale: isButtonHovered ? '1' : '0'}}
         ></div>
       </div>
       <Footer />
