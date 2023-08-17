@@ -1,0 +1,29 @@
+.form {
+  width: 550px;
+  height: 700px;
+  background: var(--primary-background);
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  height: 13%;
+  width: 100%;
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  justify-content: space-between;
+
+  > h1, button {
+    color: var(--secondary-text);
+    font-size: 1.7rem;
+  }
+
+  > button {
+    background: none;
+    border: none;
+    font-size: 2.4rem;
+  }
+}

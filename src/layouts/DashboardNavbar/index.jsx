@@ -6,11 +6,7 @@ import { MdNotificationsNone, MdSearch, MdSettings } from 'react-icons/md';
 
 export default function DashboardNavbar() {
 
-  const [user, setUser] = useState({})
-
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("user")))
-  }, [])
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || {})
 
   return (
     <div className={styles['navbar']}>

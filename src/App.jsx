@@ -4,6 +4,7 @@ import { Landing, OverviewPage, TeamsPage, TicketsPage } from './pages';
 import { useEffect } from 'react';
 import './App.css';
 import styles from './App.module.css'
+import ProtectRoute from './components/ProtectedRoute';
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -23,11 +24,12 @@ function App() {
         <Route path="/" element={<NavbarLayout />}>
           <Route index element={<LayoutWrapper className="container"><Landing /></LayoutWrapper>} />
         </Route>
-
-        <Route path="/dashboard" element={<SidenavbarLayout />}>
-          <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
-          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><TicketsPage /></LayoutWrapper>} />
-          {/* <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} /> */}
+        <Route element={<ProtectRoute />}>  
+          <Route path="/dashboard" element={<SidenavbarLayout />}>
+            <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
+            <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><TicketsPage /></LayoutWrapper>} />
+            {/* <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} /> */}
+          </Route>
         </Route>
       </Routes>
     </>

@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import { Link, Outlet } from 'react-router-dom';
 import { GrAdd, GrOverview, GrProjects } from 'react-icons/gr';
 import { AiOutlineTeam } from 'react-icons/ai';
-import { Overlay, TicketsCreate } from '../../components';
+import { Overlay, TeamCreate } from '../../components';
 
 export default function SideNavbar() {
 
@@ -50,7 +50,7 @@ export default function SideNavbar() {
         </div>
       </div>
       <Outlet />
-      {showOverlay && <Overlay onClose={() => setShowOverlay(false)} content={TicketsCreate} />}
+      {showOverlay && <Overlay onClose={() => setShowOverlay(false)} content={TeamCreate} />}
     </>
   );
 }
