@@ -1,11 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import { DashboardNavbar, Navbar, SideNavbar } from './layouts';
-import { Landing, OverviewPage, TeamsPage } from './pages';
+import { Landing, OverviewPage, TeamsPage, TicketsPage } from './pages';
 import { useEffect } from 'react';
 import './App.css';
 import styles from './App.module.css'
-import { Tickets } from './components';
-import { useAuth } from './contexts/AuthContext';
 
 function App() {
   let theme = localStorage.getItem("theme");
@@ -28,7 +26,7 @@ function App() {
 
         <Route path="/dashboard" element={<SidenavbarLayout />}>
           <Route index element={<LayoutWrapper className="dashboard-container" title={"Overview"}><OverviewPage /></LayoutWrapper>} />
-          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><Tickets /></LayoutWrapper>} />
+          <Route path='tickets' element={<LayoutWrapper className="dashboard-container" title={"Tickets"}><TicketsPage /></LayoutWrapper>} />
           {/* <Route path='teams' element={<LayoutWrapper className="dashboard-container" title={"Teams"}><TeamsPage /></LayoutWrapper>} /> */}
         </Route>
       </Routes>

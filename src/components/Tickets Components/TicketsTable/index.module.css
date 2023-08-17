@@ -38,5 +38,5 @@
   padding: 10px;
 }
 .ticket-item:hover {
-  background: #e4e4e4;
+  background: var(--hover-color);
 }/*# sourceMappingURL=index.module.css.map */

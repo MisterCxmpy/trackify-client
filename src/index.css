@@ -11,6 +11,7 @@
   --accent-color: #202020;
   --primary-text: #202020;
   --secondary-text: #fff;
+  --hover-color: #e4e4e4;
 }
 
 [data-theme="dark"] {
@@ -21,6 +22,7 @@
   --accent-color: #181818;
   --primary-text: #fff;
   --secondary-text: #fff;
+  --hover-color: #292929;
 }
 
 [data-theme="light"] {
@@ -31,6 +33,7 @@
   --accent-color: #181818;
   --primary-text: #202020;
   --secondary-text: #fff;
+  --hover-color: #e4e4e4;
 }
 
 #root {
