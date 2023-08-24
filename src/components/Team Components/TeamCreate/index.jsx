@@ -8,6 +8,12 @@ export default function TeamCreate({ onClose }) {
         <h1>Create Team</h1>
         <button onClick={onClose}>&times;</button>
       </div>
+      <form className={styles['form-content']}>
+        <div className={styles['input-section']}>
+          <input type='text' required />
+          <span>Team Name</span>
+        </div>
+      </form>
     </div>
   )
 }

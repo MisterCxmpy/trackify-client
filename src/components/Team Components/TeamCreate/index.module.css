@@ -3,6 +3,7 @@
   height: 700px;
   background: var(--primary-background);
   position: relative;
+  box-shadow: var(--box-shadow);
 }
 
 .header {
@@ -24,4 +25,40 @@
   background: none;
   border: none;
   font-size: 2.4rem;
+}
+
+.form-content {
+  position: relative;
+  top: 13%;
+  padding: 50px;
+}
+
+.input-section {
+  width: 100%;
+  position: relative;
+}
+.input-section > span {
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 200;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+.input-section > button, .input-section > input {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  padding: 16px 30px;
+  font-weight: 200;
+  font-size: 16px;
+  border: 1.75px solid var(--primary-text);
+}
+.input-section > input:focus ~ span, .input-section > input:valid ~ span {
+  top: -20px;
+  left: -5px;
+  font-size: 14px;
+  outline: none !important;
 }/*# sourceMappingURL=index.module.css.map */
